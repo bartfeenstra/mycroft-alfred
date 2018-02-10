@@ -1,0 +1,6 @@
+[run]
+source =
+    mycroft_alfred
+
+omit =
+    */test*.py
