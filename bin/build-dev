@@ -1,4 +1,14 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 cd `dirname "$0"`/..
 pip install -r requirements-dev.txt
+
+if [ -d ./mycroft-core ]; then
+    pushd ./mycroft-core
+    git pull
+    popd
+else
+    git clone --depth 1 --branch master https://github.com/MycroftAI/mycroft-core.git
+fi
+
+pip install -r ./mycroft-core/requirements.txt

@@ -5,6 +5,15 @@ python:
 
 cache: pip
 
+addons:
+  apt:
+    packages:
+    - libasound2-dev
+    - libfann-dev
+    - portaudio19-dev
+    - python-dev
+    - swig
+
 install:
     - ./bin/build-dev
 

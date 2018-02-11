@@ -6,6 +6,8 @@ cd `dirname "$0"`/..
 exit_code=0
 trap '(( exit_code |= $? ))' ERR
 
+export PYTHONPATH=`pwd`/mycroft-core:$PYTHONPATH
+
 flake8 --ignore=E501 ./mycroft_alfred
 coverage run -m nose2
 coverage report -m
